@@ -1,0 +1,27 @@
+@layout LoginLayout
+@page "/login"
+@using PIMFazendaUrbanaRadzen.Services
+@using PIMFazendaUrbanaAPI.DTOs
+@inject AuthService authService
+@inject NavigationManager navigationManager
+
+<PageTitle>Login</PageTitle>
+
+<RadzenText Text="Login" TextStyle="Radzen.Blazor.TextStyle.H5" class="mb-4" TagName="Radzen.Blazor.TagName.H2" />
+<RadzenRow>
+    <RadzenColumn SizeMD="12">
+        <RadzenTemplateForm TItem="LoginDTO" Method="post" Submit="OnLoginClick">
+            <RadzenRow>
+                <RadzenAlert Shade="Radzen.Shade.Lighter" Variant="Radzen.Variant.Flat" Size="Radzen.AlertSize.Small" AlertStyle="Radzen.AlertStyle.Danger" Visible="@errorVisible">@error</RadzenAlert>
+            </RadzenRow>
+            <RadzenRow>
+                <RadzenTextBox @bind-Value="loginDto.UserName" Placeholder="Nome de usuário" style="margin-right: 10px" />
+                <RadzenTextBox @bind-Value="loginDto.Password" Type="password" Placeholder="Senha" style="margin-right: 10px" />
+                <RadzenButton Text="Login" Click="OnLoginClick" style="margin-right: 10px" />
+            </RadzenRow>
+            <RadzenRow>
+                <RadzenLink Text="Esqueceu sua senha?" Click="OnResetPassword" style="margin-top: 10px; position: static; float: right" />
+            </RadzenRow>
+        </RadzenTemplateForm>
+    </RadzenColumn>
+</RadzenRow>
