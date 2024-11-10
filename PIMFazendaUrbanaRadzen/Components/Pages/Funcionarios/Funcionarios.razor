@@ -98,14 +98,14 @@
                     </RadzenDataGridColumn>
 
                     <!-- Coluna para Usuario com tooltip -->
-                    <RadzenDataGridColumn TItem="FuncionarioDTO" Property="Usuário" Title="Usuário" Width="13%">
+                    <RadzenDataGridColumn TItem="FuncionarioDTO" Property="Usuário" Title="Usuário" Width="8%">
                         <Template Context="funcionario">
                             <span title="@funcionario.Usuario">@funcionario.Usuario</span> <!-- Tooltip com o usuário completo -->
                         </Template>
                     </RadzenDataGridColumn>
 
                     <!-- Coluna para Cargo com tooltip -->
-                    <RadzenDataGridColumn TItem="FuncionarioDTO" Property="Cargo" Title="Cargo" Width="13%">
+                    <RadzenDataGridColumn TItem="FuncionarioDTO" Property="Cargo" Title="Cargo" Width="8%">
                         <Template Context="funcionario">
                             <span title="@funcionario.Cargo">@funcionario.Cargo</span> <!-- Tooltip com o Cargo completo -->
                         </Template>
